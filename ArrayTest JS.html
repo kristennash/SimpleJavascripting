@@ -1,0 +1,39 @@
+<html>
+<head>
+<script>
+var map= new Object();
+var array_elmt=new Array(1.77,2.77,3.77,4.77);
+
+function arrayFunction(){
+
+var array_len= array_elmt.length;
+var theTable = document.getElementById('Doubling_tb');
+
+	for (var i=0;i<array_len;i++){
+	    var tr = document.createElement("tr");
+		var td = document.createElement("td");
+	    td.innerHTML = array_elmt[i];
+		tr.appendChild(td);
+		var returnvalue= doubling(array_elmt[i]);
+		map[array_elmt[i]]= returnvalue;
+		var td1 = document.createElement("td");
+		td1.innerHTML= returnvalue;
+		tr.appendChild(td1);
+		theTable.appendChild(tr);
+	}
+}
+function doubling(a){
+		if (typeof a == 'string'){
+		    return (a+a);
+		}else{
+			return (a*2);
+		}
+}
+
+</script>
+</head>
+<body onload="arrayFunction()">
+<table id="Doubling_tb">
+</table>
+</body>
+</html>
